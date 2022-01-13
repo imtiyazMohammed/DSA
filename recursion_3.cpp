@@ -41,7 +41,7 @@ void selectionSort(int *arr, int i){
     swap(arr[i], arr[idx]);
 }
 
-// Insertion sort 
+// Insertion sort  
 void insertionSort(int *arr, int n){
     if(n<=0) return;
     insertionSort(arr, n-1);
