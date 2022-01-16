@@ -30,15 +30,15 @@ void mergeSort(int *arr, int low, int high){
     merge(arr, low, high);
 }
 
-// Selection Sort - wrong code, hasn't solved yet, NEED TO BE UPDATED
-void selectionSort(int *arr, int i){
-    if(i<=0) return;
-    selectionSort(arr, i-1);
-    int idx = i-1;
-    for(int j = i-1; j>=0; j--){
-        if(arr[j] > arr[idx]) idx = j;
+// Selection Sort 
+void selectionSort(int *arr, int n){
+    if(n == 1) return;
+    int idx = 0;
+    for(int i = 1; i < n; i++){
+        if(arr[i] < arr[idx]) idx = i;
     }
-    swap(arr[i], arr[idx]);
+    swap(arr[0], arr[idx]);
+    selectionSort(arr+1, n-1);
 }
 
 // Insertion sort  
