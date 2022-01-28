@@ -42,10 +42,9 @@ int HashMap::hashFunction(int key){
 void HashMap::insert(int key, int value){
     int hashValue = hashFunction(key);
     auto& cell = table[hashValue];
-    auto itr = begin(cell);
     bool keyExists = false;
     
-    for(; itr != end(cell); itr++){
+    for(auto itr = begin(cell); itr != end(cell); itr++){
         if(itr->first == key){       
             keyExists = true;
             itr->second = value;
